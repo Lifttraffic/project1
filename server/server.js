@@ -26,7 +26,7 @@ const upload = multer({ storage });
 app.use(express.json());
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: "http://localhost:5173, http://31.97.226.203",
     credentials: true,
   })
 );
