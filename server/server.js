@@ -1,4 +1,9 @@
 require('dotenv').config()
+const express = require('express');
+const mysql = require('mysql');
+const app = express();
+const PORT = process.env.PORT || 3000;
+
 import dotenv from "dotenv";
 dotenv.config();
 import express from "express";
@@ -47,6 +52,22 @@ const db = mysql.createConnection({
   password: process.env.DB_PASSWORD,
   database: process.env.DB_NAME,
 });
+
+db.connect((err) => {
+  if (err) {
+    console.error("Database connection failed:", err);
+    return;
+  }
+  console.log("Database Connected!");
+});
+
+app.get('/', (req, res) => {
+  res.send('Server is running...');
+});
+
+app.listen(PORT, () => {
+  console.log('Server running on port ${PORT}');
+}); 
 
 // middleware
 const verifyUser = (req, res, next) => {
