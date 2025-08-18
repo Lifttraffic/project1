@@ -57,7 +57,7 @@ db.connect((err) => {
   console.log("Database Connected!");
 });
 
-app.get('/', (req, res) => {
+app.get("/", (req, res) => {
   res.send('Server is running...');
 });
 
