@@ -65,6 +65,12 @@ app.listen(PORT, () => {
   console.log('Server running on port ${PORT}');
 }); 
 
+app.use(cors({
+  origin: 'http"//31.97.226.203',
+  methods: ['GET','POST','PUT','DELETE'],
+  credentials: true
+}));
+
 // middleware
 const verifyUser = (req, res, next) => {
   const token = req.cookies.token;
