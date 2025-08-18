@@ -49,6 +49,12 @@ const db = mysql.createConnection({
   database: process.env.DB_NAME,
 });
 
+app.use(cors({
+  origin: 'http"//31.97.226.203:8081',
+  methods: ['GET','POST','PUT','DELETE'],
+  credentials: true
+}));
+
 db.connect((err) => {
   if (err) {
     console.error("Database connection failed:", err);
@@ -64,12 +70,6 @@ app.get("/", (req, res) => {
 app.listen(PORT, () => {
   console.log('Server running on port ${PORT}');
 }); 
-
-app.use(cors({
-  origin: 'http"//31.97.226.203',
-  methods: ['GET','POST','PUT','DELETE'],
-  credentials: true
-}));
 
 // middleware
 const verifyUser = (req, res, next) => {
