@@ -5,13 +5,13 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 dotenv.config();
-import cors from "cors";
-import jwt from "jsonwebtoken";
-import bcrypt from "bcrypt";
-import cookieParser from "cookie-parser";
-import multer from "multer";
-import Razorpay from "razorpay";
-import crypto from "crypto"
+const cors = require("cors");
+const jwt = require("jsonwebtoken");
+const bcrypt = require("bcrypt");
+const cookieParser = require("cookie-parser");
+const multer = require("multer");
+const Razorpay = require("razorpay");
+const crypto = require("crypto")
 
 
 
