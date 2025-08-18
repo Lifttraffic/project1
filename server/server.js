@@ -16,7 +16,6 @@ import crypto from "crypto"
 
 
 
-const app = express();
 const salt = 10;
 
 // file upload
